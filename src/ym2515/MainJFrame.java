@@ -265,6 +265,21 @@ public class MainJFrame extends JFrame {
 		//Opens Midi Settings (Midi Device Selection)
 		JMenuItem mntmSettings = new JMenuItem("Midi Settings");
 		mnOptions.add(mntmSettings);
+		
+		
+		//add About Message
+		JMenu mnHelp = new JMenu("Help");
+		menuBar.add(mnHelp);
+		
+		JMenuItem mntmAbout = new JMenuItem("About...");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(MainJFrame.this, LicenseText.LicenseText, "About...", JOptionPane.PLAIN_MESSAGE);
+			}
+		});
+		
+		
+		mnHelp.add(mntmAbout);
 		mntmSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MidiSettingsDialog p = new MidiSettingsDialog(props, MIDIBUS);
