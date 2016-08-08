@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Midi>
+  <Operator_1>
+    <map key="TL" value="16" />
+    <map key="MUL" value="17" />
+    <map key="DT1" value="18" />
+    <map key="DT2" value="19" />
+    <map key="KS" value="20" />
+    <map key="AR" value="21" />
+    <map key="D1R" value="22" />
+    <map key="D1L" value="23" />
+    <map key="D2R" value="24" />
+    <map key="RR" value="25" />
+  </Operator_1>
+  <Operator_2>
+    <map key="TL" value="26" />
+    <map key="MUL" value="27" />
+    <map key="DT1" value="28" />
+    <map key="DT2" value="29" />
+    <map key="KS" value="30" />
+    <map key="AR" value="31" />
+    <map key="D1R" value="32" />
+    <map key="D1L" value="33" />
+    <map key="D2R" value="34" />
+    <map key="RR" value="35" />
+  </Operator_2>
+  <Operator_3>
+    <map key="TL" value="36" />
+    <map key="MUL" value="37" />
+    <map key="DT1" value="38" />
+    <map key="DT2" value="39" />
+    <map key="KS" value="40" />
+    <map key="AR" value="41" />
+    <map key="D1R" value="42" />
+    <map key="D1L" value="43" />
+    <map key="D2R" value="44" />
+    <map key="RR" value="45" />
+  </Operator_3>
+  <Operator_4>
+    <map key="TL" value="46" />
+    <map key="MUL" value="47" />
+    <map key="DT1" value="48" />
+    <map key="DT2" value="49" />
+    <map key="KS" value="50" />
+    <map key="AR" value="51" />
+    <map key="D1R" value="52" />
+    <map key="D1L" value="53" />
+    <map key="D2R" value="54" />
+    <map key="RR" value="55" />
+  </Operator_4>
+  <Common>
+    <map key="PAN" value="-1" />
+    <map key="SLOT" value="-1" />
+    <map key="OP1_EN" value="56" />
+    <map key="OP2_EN" value="57" />
+    <map key="OP3_EN" value="58" />
+    <map key="OP4_EN" value="59" />
+    <map key="AMSEN_OP1" value="60" />
+    <map key="AMSEN_OP2" value="61" />
+    <map key="AMSEN_OP3" value="62" />
+    <map key="AMSEN_OP4" value="63" />
+    <map key="FL" value="64" />
+    <map key="AMS" value="65" />
+    <map key="PMS" value="66" />
+    <map key="CON" value="67" />
+  </Common>
+  <LFO>
+    <map key="LFRQ" value="68" />
+    <map key="WF" value="69" />
+    <map key="AMD" value="70" />
+    <map key="PMD" value="71" />
+    <map key="NFRQ" value="72" />
+    <map key="NE" value="73" />
+  </LFO>
+</Midi>
