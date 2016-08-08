@@ -19,78 +19,84 @@
 package ym2151;
 
 import java.awt.BorderLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import themidibus.MidiBus;
-import ym2151.Swing.InstrumentMapperPanel;
-import ym2151.xml.ControlFile.PatchFileManager;
-import ym2151.DataModel.Channels;
-import ym2151.DataModel.Instrument;
-import ym2151.Preferences.Swing.MidiSettingsDialog;
-import ym2151.Preferences.Swing.Properties;
-import ym2151.Preferences.Swing.Properties.Entry;
-
-import javax.swing.JFileChooser;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
-
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import javax.swing.JSeparator;
-import javax.swing.JTabbedPane;
-import javax.swing.JScrollPane;
-
-import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
+import net.miginfocom.swing.MigLayout;
+
 import org.xml.sax.SAXException;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import themidibus.MidiBus;
 
+
+import ym2151.DataModel.Channels;
+import ym2151.DataModel.Instrument;
+import ym2151.Preferences.Swing.MidiSettingsDialog;
+import ym2151.Preferences.Swing.Properties;
+import ym2151.Preferences.Swing.Properties.Entry;
+import ym2151.Swing.InstrumentMapperPanel;
+import ym2151.xml.ControlFile.PatchFileManager;
 
 /**
  * This is the Main Window which opens when the Program is started.
  * */
 public class MainJFrame extends JFrame {
 
+	
+	
+	
 	/**
 	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = 7566951928240167398L;
-
+	public static final String VERSION = "V1.0.0";
+	
+	
 	private JFileChooser chooser;
 	private Properties props;
 	
 	
 	public static void main(final String[] args) {
 	
-				try {
+				
 					MainJFrame frame = new MainJFrame();
-					frame.loadPatch(args.length == 1 ? args[0] : null);
+					try {
+						frame.loadPatch(args.length == 1 ? args[0] : null);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				
 	}
 
 	//MidiBus we use in the Program
 	public final static MidiBus MIDIBUS = new MidiBus();
+	
 	
 	//Polymode Active?
 	public static boolean POLYMODE = true;
@@ -116,7 +122,7 @@ public class MainJFrame extends JFrame {
 		});
 		
 		//set some Frame Properties
-		setTitle("YM2151 Arduino Shield Controller");
+		setTitle("YM2151 Arduino Shield Controller - "+VERSION);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1145, 698);
 		
