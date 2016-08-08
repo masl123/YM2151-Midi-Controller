@@ -40,7 +40,7 @@ import java.io.IOException;
 
 import javax.swing.JLabel;
 
-import ym2515.DataModel.OPMFile;
+import ym2151.DataModel.OPMFile;
 
 public class IOPanel extends JPanel {
 	private JTextField fldPath;
