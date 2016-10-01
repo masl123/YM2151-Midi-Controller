@@ -545,7 +545,7 @@ public class InstrumentMapperPanel extends JPanel {
 		i.op2.map.addHashMapListener(new MapperListener(map.map_op2,i));
 		i.op3.map.addHashMapListener(new MapperListener(map.map_op3,i));
 		i.op4.map.addHashMapListener(new MapperListener(map.map_op4,i));
-		i.lfo.map.addHashMapListener(new MapperListener(map.map_lfo,i)); //TODO Only one LFO of all Instruments should be Mapped
+		i.lfo.map.addHashMapListener(new MapperListener(map.map_lfo,i));
 		i.common.map.addHashMapListener(new MapperListener(map.map_common,i));
 	}
 

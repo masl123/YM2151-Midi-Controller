@@ -21,3 +21,9 @@ static String LicenseText =
 
 }
  
+
+
+
+
+
+//TODO If the Synchronisation between the Arduino and the PC Software is messed up, click on MIDI->Sync Instruments. You should also do this after starting the Software (don't forget to select a Midi Output first), Setting the Poly Mode or Changing the Mapping. (I Should automate this)

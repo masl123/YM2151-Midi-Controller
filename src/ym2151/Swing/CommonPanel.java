@@ -236,8 +236,9 @@ public class CommonPanel extends JPanel {
 				if(algorithm<0){
 					algorithm = 8+algorithm;
 				}
-				algorithmChanged(common.map);
 				algorithmSelector.setAlgorithm(algorithm);
+				algorithmChanged(common.map);
+				
 			}
 		});
 		pnlAlgControl.add(buttonLeft);
@@ -249,8 +250,9 @@ public class CommonPanel extends JPanel {
 				int algorithm = algorithmSelector.getAlgorithm();
 				
 				algorithm = (algorithm+1) % 8;
-				algorithmChanged(common.map);
 				algorithmSelector.setAlgorithm(algorithm);
+				algorithmChanged(common.map);
+				
 			}
 		});
 		pnlAlgControl.add(buttonRight);

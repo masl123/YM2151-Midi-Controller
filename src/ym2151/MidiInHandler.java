@@ -44,7 +44,6 @@ public class MidiInHandler implements SimpleMidiListener{
 	 * Handles note ON Midi Messages
 	 * */
 	public void noteOn(int channel, int pitch, int velocity) {
-		System.out.println(channel);
 		bus.sendNoteOn(channel, pitch, velocity);
 	}
 	
