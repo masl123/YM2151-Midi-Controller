@@ -166,7 +166,7 @@ public class MidiSettingsDialog extends JDialog {
 					if((Boolean) midiInModel.getValueAt(e.getFirstRow(), 0)){
 						String input = (String)midiInModel.getValueAt(e.getFirstRow(),1);
 						midibus.addInput(input);
-						MidiSettingsDialog.this.props.put("IN" ,input);
+						MidiSettingsDialog.this.props.put("IN", input);
 					}else{
 						String input = (String)midiInModel.getValueAt(e.getFirstRow(),1);
 						midibus.removeInput(input);
@@ -186,8 +186,8 @@ public class MidiSettingsDialog extends JDialog {
 						MidiSettingsDialog.this.props.put("OUT", output);
 					}else{
 						String output = (String)midiOutModel.getValueAt(e.getFirstRow(), 1);
-						midibus.addOutput(output);
-						MidiSettingsDialog.this.props.remove("OUT" ,output );
+						midibus.removeOutput(output);
+						MidiSettingsDialog.this.props.remove("OUT", output);
 					}
 				}
 			}

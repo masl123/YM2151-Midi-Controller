@@ -270,7 +270,13 @@ public class MainJFrame extends JFrame {
 		//Opens Midi Settings (Midi Device Selection)
 		JMenuItem mntmSettings = new JMenuItem("Midi Settings");
 		mnOptions.add(mntmSettings);
-		
+		mntmSettings.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MidiSettingsDialog p = new MidiSettingsDialog(props, MIDIBUS);
+				p.setVisible(true);
+				
+			}
+		});
 		
 		//add About Message
 		JMenu mnHelp = new JMenu("Help");
@@ -285,13 +291,7 @@ public class MainJFrame extends JFrame {
 		
 		
 		mnHelp.add(mntmAbout);
-		mntmSettings.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MidiSettingsDialog p = new MidiSettingsDialog(props, MIDIBUS);
-				p.setVisible(true);
-				
-			}
-		});
+		
 		
 		
 		//is just doing Midi Through
