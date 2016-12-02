@@ -82,8 +82,6 @@ public class MainJFrame extends JFrame {
 	
 	
 	public static void main(final String[] args) {
-	
-				
 					MainJFrame frame = new MainJFrame();
 					try {
 						frame.loadPatch(args.length == 1 ? args[0] : null);
@@ -225,7 +223,7 @@ public class MainJFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				POLYMODE = chckbxmntmPolyMode.isSelected();
 				MIDIBUS.sendControllerChange(Channels.CH1.num, 74, POLYMODE ? 127 : 0);
-				System.out.println("POLY   "+(POLYMODE ? 127 : 0)+"   74   "+Channels.CH1);
+				System.out.println("POLY\t"+(POLYMODE ? 127 : 0)+"\t74\t"+Channels.CH1);
 			}
 		});
 		mnOptions.add(chckbxmntmPolyMode);
@@ -394,7 +392,6 @@ public class MainJFrame extends JFrame {
 				f = new File(f.getPath()+"\\props.properties");	
 			}
 			
-			
 			if(f.exists()){	
 				f.delete();
 			}
@@ -428,16 +425,17 @@ public class MainJFrame extends JFrame {
 			e.printStackTrace();
 		}
 		
-		List<Entry<String,String>> entries = new LinkedList<Entry<String,String>>();
 		
+		//remove all Instrument Entries
+		List<Entry<String,String>> entries = new LinkedList<Entry<String,String>>();
 		for(Entry<String, String> e  : p.getList()){
 			
-			if(e.value.equalsIgnoreCase("IN")){
-				if(!MIDIBUS.addInput(e.key)){
+			if(e.key.equalsIgnoreCase("IN")){
+				if(!MIDIBUS.addInput(e.value)){
 					entries.add(e);
 				}
-			}else if(e.value.equalsIgnoreCase("OUT")){
-				if(!MIDIBUS.addOutput(e.key)){
+			}else if(e.key.equalsIgnoreCase("OUT")){
+				if(!MIDIBUS.addOutput(e.value)){
 					entries.add(e);	
 				}
 			}

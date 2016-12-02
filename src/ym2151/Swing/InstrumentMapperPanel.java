@@ -599,18 +599,18 @@ public class InstrumentMapperPanel extends JPanel {
 			}else if(mapping.map_lfo == map){
 				//send LFO Changes of Selected Instrument
 				bus.sendControllerChange(Channels.CH1.num, cc, value);
-				System.out.println(key+"   "+value+"   "+cc+"   "+Channels.CH1);
+				System.out.println(key+"\t"+value+"\t"+cc+"\t"+Channels.CH1);
 			}else if(!MainJFrame.POLYMODE){
 				//Channel Mode
 				for(Object o : i.defaultListModel.toArray()){
 					Channels c = (Channels) o;
 					bus.sendControllerChange(c.num, cc, value);
-					System.out.println(key+"   "+value+"   "+cc+"   "+c);
+					System.out.println(key+"\t"+value+"\t"+cc+"\t"+c);
 				}
 			}else if(MainJFrame.POLYMODE && i.polyInstr){
 				//Only send Changes of Poly-Instrument
 				bus.sendControllerChange(Channels.CH1.num, cc, value);
-				System.out.println(key+"   "+value+"   "+cc+"   "+Channels.CH1);
+				System.out.println(key+"\t"+value+"\t"+cc+"\t"+Channels.CH1);
 			}
 		}
 	}
