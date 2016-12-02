@@ -113,9 +113,8 @@ public class MidiSettingsDialog extends JDialog {
 					public void stateChanged(ChangeEvent e) {
 						MidiSettingsDialog.this.props.update("MasterTune", spinner.getValue()+"");
 						//Message is: F0 M T V F7 where M,T are encoded in ASCII and V is the Value
-						byte[] sysexMessage = new byte[]{(byte) 0xF0, 0x4d, 0x54 , (byte) (((Byte)spinner.getValue()) + 63), (byte) 0xF7};
+						byte[] sysexMessage = new byte[]{(byte) 0xf0, 0x4d, 0x54 , (byte) (((Byte)spinner.getValue()) + 63), (byte) 0xf7};
 						midibus.sendMessage(sysexMessage);
-						
 						System.out.println("SYSEX\t"+"MT\t"+ ((Byte)spinner.getValue()+63));
 					}
 				});
