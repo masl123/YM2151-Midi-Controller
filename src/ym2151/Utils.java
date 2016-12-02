@@ -1,6 +1,6 @@
 /**
 *	YM2151 - Midi Controller Software for Arduino Shield
-*	(C) 2016  Marcel Weiß
+*	(C) 2016  Marcel Weiï¿½
 *
 *	This program is free software : you can redistribute it and / or modify
 *	it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ public class Utils {
 	public static <B> void addAll(DefaultListModel<B> m, List<B> o){
 		for(int i = 0 ; i < o.size(); i++){
 			m.addElement(o.get(i));
-		}		
+		}	
 	}
 	
 	/**

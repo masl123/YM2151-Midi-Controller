@@ -39,6 +39,10 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 
 /**
@@ -58,6 +62,11 @@ public class MidiSettingsDialog extends JDialog {
 	private SelectableMidiTableModel midiInModel;
 	private SelectableMidiTableModel midiOutModel;
 	
+	
+	//Master Tune Selector
+	private JSpinner spinner;
+	
+	
 	//Arguments
 	private MidiBus midibus;
 	private Properties props;
@@ -76,7 +85,7 @@ public class MidiSettingsDialog extends JDialog {
 		
 		//set up the Dialog
 		setTitle("Midi Settings");
-		setBounds(100, 100, 450, 384);
+		setBounds(100, 100, 450, 584);
 		
 		//set the Layout Manager
 		getContentPane().setLayout(new BorderLayout());
@@ -89,6 +98,34 @@ public class MidiSettingsDialog extends JDialog {
 		MidiBus.findMidiDevices();
 		
 		
+		//Master Tune
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			panel.setLayout(new BorderLayout(0, 0));
+			{
+				JLabel lblMasterTune = new JLabel("Master Tune");
+				panel.add(lblMasterTune, BorderLayout.WEST);
+			}
+			{
+				spinner = new JSpinner();
+				spinner.addChangeListener(new ChangeListener() {
+					public void stateChanged(ChangeEvent e) {
+						MidiSettingsDialog.this.props.update("MasterTune", spinner.getValue()+"");
+						//Message is: F0 M T V F7 where M,T are encoded in ASCII and V is the Value
+						byte[] sysexMessage = new byte[]{(byte) 0xF0, 0x4d, 0x54 , (byte) (((Byte)spinner.getValue()) + 63), (byte) 0xF7};
+						midibus.sendMessage(sysexMessage);
+						
+						System.out.println("SYSEX\t"+"MT\t"+ ((Byte)spinner.getValue()+63));
+					}
+				});
+				spinner.setModel(new SpinnerNumberModel(new Byte((byte) 0), new Byte((byte) - 63), new Byte((byte) 64), new Byte((byte) 1)));
+				spinner.setValue(Byte.parseByte(props.getFirstValue("MasterTune", "0")));
+				panel.add(spinner, BorderLayout.CENTER);
+			}
+		}
+		
+		
 		//Midi INPUT Selection
 		{
 			JLabel lblMidiInput = new JLabel("Midi Input");
@@ -99,14 +136,11 @@ public class MidiSettingsDialog extends JDialog {
 			table = new JTable();
 			midiInModel = new SelectableMidiTableModel();
 			
-			
-			
 			table.setModel(midiInModel);
 			loadMidiDevices(midiInModel, true);
 			
 			JScrollPane scrollPane = new JScrollPane(table);
 			contentPanel.add(scrollPane);
-
 		}
 		
 		//Midi OUTPUT Selection
@@ -132,12 +166,11 @@ public class MidiSettingsDialog extends JDialog {
 					if((Boolean) midiInModel.getValueAt(e.getFirstRow(), 0)){
 						String input = (String)midiInModel.getValueAt(e.getFirstRow(),1);
 						midibus.addInput(input);
-						MidiSettingsDialog.this.props.put(input, "IN");
+						MidiSettingsDialog.this.props.put("IN" ,input);
 					}else{
 						String input = (String)midiInModel.getValueAt(e.getFirstRow(),1);
 						midibus.removeInput(input);
-						MidiSettingsDialog.this.props.remove(input, "IN");
-						
+						MidiSettingsDialog.this.props.remove("IN", input);
 					}
 				}
 			}
@@ -150,11 +183,11 @@ public class MidiSettingsDialog extends JDialog {
 					if((Boolean) midiOutModel.getValueAt(e.getFirstRow(), 0)){
 						String output = (String)midiOutModel.getValueAt(e.getFirstRow(), 1);
 						midibus.addOutput(output);
-						MidiSettingsDialog.this.props.put(output, "OUT");
+						MidiSettingsDialog.this.props.put("OUT", output);
 					}else{
 						String output = (String)midiOutModel.getValueAt(e.getFirstRow(), 1);
 						midibus.addOutput(output);
-						MidiSettingsDialog.this.props.remove(output, "OUT");
+						MidiSettingsDialog.this.props.remove("OUT" ,output );
 					}
 				}
 			}

@@ -146,6 +146,28 @@ public class Properties {
 			data.add(e);
 	}
 	
+	public String getFirstValue(String key, String std){
+		 for(Entry<String, String> e : data){
+			 if(e.key.equalsIgnoreCase(key)){
+				 return e.value;
+			 }
+		 }
+		return std;
+	}
+	
+	
+	public void update(String key, String value){
+		 for(Entry<String, String> e : data){
+			if(e.key.equalsIgnoreCase(key)){
+				e.value = value;
+				return;
+			}
+		}
+		 
+		put(key, value);		 
+	}
+	
+	
 	
 	/**
 	 * Removes a Property
@@ -177,7 +199,7 @@ public class Properties {
 		
 		@Override
 		public boolean equals(Object ob) {
-			return super.equals(ob) | (ob.getClass().equals(Entry.class) && ((Entry)ob).key.equals(key) &&((Entry)ob).value.equals(value));
+			return super.equals(ob) | (ob.getClass().equals(Entry.class) && ((Entry)ob).key.equals(key) && ((Entry)ob).value.equals(value));
 		}
 		
 	}
