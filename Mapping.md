@@ -79,3 +79,9 @@
 ###<br> OTHER:
 <br> 74	POLY/CHANNEL Mode (0 = CHANNEL; 127 = POLY)
 
+# MIDI SYSEX: 
+
+
+| Name            | Code (in Hex)       | Value Description                                       |
+|-----------------|---------------------|---------------------------------------------------------|
+| Master Tune     | f0 4d 54 [Value] f7 | Value has length of 8-Bit<br> Master Tune = Value - 63  |
