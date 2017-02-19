@@ -84,4 +84,4 @@
 
 | Name            | Code (in Hex)       | Value Description                                       |
 |-----------------|---------------------|---------------------------------------------------------|
-| Master Tune     | f0 4d 54 [Value] f7 | Value has length of 8-Bit<br> Master Tune = Value - 63  |
+| Master Tune     | f0 4d 54 [Value] f7 | [Value] has length of 8-Bit (Max Value is 127)<br> Master Tune = [Value] - 63  |
