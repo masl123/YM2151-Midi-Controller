@@ -21,8 +21,15 @@ package ym2151.Swing;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+import com.kitfox.svg.SVGDiagram;
+import com.kitfox.svg.SVGException;
+import com.kitfox.svg.SVGUniverse;
+
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.net.URI;
 
 
 /**
@@ -35,6 +42,13 @@ public class AlgorithmSelector extends JPanel {
 	private int algo = 0;
 	private int max;
 	
+	private static SVGUniverse svgImages = new SVGUniverse();
+	private static URI[] imagePaths = new URI[8];
+	
+	
+	static{
+		loadImages();
+	}
 	
 	/**
 	 * A  Panel which shows the Current selected Algorithm
@@ -44,8 +58,16 @@ public class AlgorithmSelector extends JPanel {
 		setBackground(Color.WHITE);
 		setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		this.max = max;
+		
 	}
 
+	private static void loadImages(){
+		for(int i = 0; i<8 ; i++){
+			imagePaths[i] = svgImages.loadSVG(AlgorithmSelector.class.getResource("/Images/SVG/Algorithms/"+i+".svg"));
+		}
+	}
+	
+	
 	/**
 	 * Sets the Algorithm to the Value
 	 * @param i the Algorithm to Select
@@ -73,10 +95,31 @@ public class AlgorithmSelector extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		float f=20.0f; // font size.
-		g.setFont(g.getFont().deriveFont(f));
-		g.drawString(algo+"",10,(int) (f+10));// provides optimum gap for printing
+		
 
+		try {
+			Graphics2D g2d = (Graphics2D) g.create();
+			
+			SVGDiagram diag = svgImages.getDiagram(imagePaths[algo]);
+			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+			g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+			
+			
+			g2d.scale(((double)getWidth())/diag.getWidth(), ((double)getHeight())/diag.getHeight());
+			diag.render(g2d);
+		} catch (SVGException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 }
+
+
+
+
+
+
+

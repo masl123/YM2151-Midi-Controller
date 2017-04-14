@@ -34,6 +34,8 @@ import ym2151.DataModel.Common;
 import ym2151.Swing.ListenerHashMap.HashMapListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.BoxLayout;
+import java.awt.Component;
 
 
 /**
@@ -54,8 +56,8 @@ public class CommonPanel extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{5, 214, 82, 5, 0};
-		gridBagLayout.rowHeights = new int[]{0, 100, 0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
+		gridBagLayout.rowHeights = new int[]{0, 239, 0, 0};
+		gridBagLayout.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
@@ -69,9 +71,9 @@ public class CommonPanel extends JPanel {
 		add(pnlleft, gbc_pnlleft);
 		GridBagLayout gbl_pnlleft = new GridBagLayout();
 		gbl_pnlleft.columnWidths = new int[]{100, 0};
-		gbl_pnlleft.rowHeights = new int[]{10, 40, 10, 40, 40, 0};
-		gbl_pnlleft.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_pnlleft.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlleft.rowHeights = new int[]{10, 40, 10, 40, 87, 64, 0};
+		gbl_pnlleft.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_pnlleft.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		pnlleft.setLayout(gbl_pnlleft);
 		
 		//Operator on/off Button Label
@@ -117,6 +119,7 @@ public class CommonPanel extends JPanel {
 		//Panel for the Knobs
 		JPanel pnlKnobs = new JPanel();
 		GridBagConstraints gbc_pnlKnobs = new GridBagConstraints();
+		gbc_pnlKnobs.insets = new Insets(0, 0, 5, 0);
 		gbc_pnlKnobs.fill = GridBagConstraints.BOTH;
 		gbc_pnlKnobs.gridx = 0;
 		gbc_pnlKnobs.gridy = 4;
@@ -124,7 +127,7 @@ public class CommonPanel extends JPanel {
 		GridBagLayout gbl_pnlKnobs = new GridBagLayout();
 		gbl_pnlKnobs.columnWidths = new int[]{73, 73, 73, 0};
 		gbl_pnlKnobs.rowHeights = new int[]{29, 40, 0};
-		gbl_pnlKnobs.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlKnobs.columnWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
 		gbl_pnlKnobs.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		pnlKnobs.setLayout(gbl_pnlKnobs);
 		
@@ -183,6 +186,25 @@ public class CommonPanel extends JPanel {
 		pnlKnobs.add(knobPMS, gbc_knobPMS);
 		
 		
+		
+		//Setup Volume Knob
+		JPanel pnlVolume = new JPanel();
+		GridBagConstraints gbc_pnlVolume = new GridBagConstraints();
+		gbc_pnlVolume.fill = GridBagConstraints.BOTH;
+		gbc_pnlVolume.gridx = 0;
+		gbc_pnlVolume.gridy = 5;
+		pnlleft.add(pnlVolume, gbc_pnlVolume);
+		pnlVolume.setLayout(new BoxLayout(pnlVolume, BoxLayout.Y_AXIS));
+		
+		JLabel lblVolume = new JLabel("Volume");
+		lblVolume.setAlignmentX(Component.CENTER_ALIGNMENT);
+		pnlVolume.add(lblVolume);
+		
+		NamedKnob knobVolume = new NamedKnob(common.map, "VOL");
+		knobVolume.setVar(63);
+		pnlVolume.add(knobVolume);
+		
+		
 		//add the Algorithm Selector and Buttons
 		JPanel pnlRight = new JPanel();
 		GridBagConstraints gbc_pnlRight = new GridBagConstraints();
@@ -193,7 +215,7 @@ public class CommonPanel extends JPanel {
 		add(pnlRight, gbc_pnlRight);
 		GridBagLayout gbl_pnlRight = new GridBagLayout();
 		gbl_pnlRight.columnWidths = new int[] {75, 0};
-		gbl_pnlRight.rowHeights = new int[]{20, 105, 40, 0};
+		gbl_pnlRight.rowHeights = new int[]{20, 176, 40, 0};
 		gbl_pnlRight.columnWeights = new double[]{1.0, Double.MIN_VALUE};
 		gbl_pnlRight.rowWeights = new double[]{0.0, 0.0, 1.0, Double.MIN_VALUE};
 		pnlRight.setLayout(gbl_pnlRight);

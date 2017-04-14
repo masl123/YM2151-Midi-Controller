@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="300px" viewBox="0 0 200 300" enable-background="new 0 0 200 300" xml:space="preserve">
+<g id="Ebene_2">
+	<rect x="36.5" y="213.5" stroke="#000000" stroke-miterlimit="10" width="70" height="34"/>
+	<text transform="matrix(1 0 0 1 56.9419 240.0215)" fill="#F2F2F2" font-family="Arial" font-size="24">C2</text>
+</g>
+<g id="Ebene_3">
+	<rect x="36.5" y="164.5" stroke="#000000" stroke-miterlimit="10" width="70" height="34"/>
+	<text transform="matrix(1 0 0 1 55.5981 191.0215)" fill="#F2F2F2" font-family="Arial" font-size="24">M2</text>
+</g>
+<g id="Ebene_4">
+	<rect x="36.5" y="116.5" stroke="#000000" stroke-miterlimit="10" width="70" height="34"/>
+	<text transform="matrix(1 0 0 1 56.9419 143.022)" fill="#F2F2F2" font-family="Arial" font-size="24">C1</text>
+</g>
+<g id="Ebene_5">
+	<rect x="36.5" y="67.5" stroke="#000000" stroke-miterlimit="10" width="70" height="34"/>
+	<text transform="matrix(1 0 0 1 55.5981 94.022)" fill="#F2F2F2" font-family="Arial" font-size="24">M1</text>
+	<text transform="matrix(1 0 0 1 19.1675 50.877)" font-family="Arial" font-size="24">FB</text>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="52" y1="52" x2="52" y2="68"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="53" y1="53" x2="16" y2="53"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="17" y1="86" x2="17" y2="52"/>
+	<g>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="16" y1="85" x2="27" y2="85"/>
+			<g>
+				<polygon points="25,87.405 35.841,84.502 25,81.595 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Ebene_6">
+	<g>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="161" y1="159" x2="179" y2="159"/>
+			<g>
+				<polygon points="177,161.53 187.841,158.627 177,155.72 				"/>
+			</g>
+		</g>
+	</g>
+	<circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="153.125" cy="158.625" r="7.584"/>
+	<text transform="matrix(0 -1 1 0 161.5264 165.6328)" font-family="Arial" font-size="24">+</text>
+	<g>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="153" y1="232" x2="153" y2="175"/>
+			<g>
+				<polygon points="156.03,177 153.127,166.159 150.22,177 				"/>
+			</g>
+		</g>
+	</g>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="153" y1="231" x2="107" y2="231"/>
+	<g>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="153" y1="84" x2="153" y2="142"/>
+			<g>
+				<polygon points="150.22,140 153.123,150.841 156.03,140 				"/>
+			</g>
+		</g>
+	</g>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="153" y1="85" x2="107" y2="85"/>
+	<g>
+		<g>
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="105.75" y1="133.5" x2="138.942" y2="150.366"/>
+			<g>
+				<polygon points="135.86,152.059 146.84,154.381 138.492,146.878 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="105.75" y1="182.125" x2="137.619" y2="166.168"/>
+			<g>
+				<polygon points="137.148,169.652 145.542,162.203 134.547,164.457 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

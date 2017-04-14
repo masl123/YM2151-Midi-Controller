@@ -2,6 +2,9 @@
 
 # MIDI CC:
 
+
+<br> 7 Volume
+
 ### <br> OPERATOR 1: 16 - 25
 <br> 16	Level
 <br> 17	Mul

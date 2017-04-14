@@ -40,6 +40,7 @@ public class Common {
 	 * */
 	protected Common(){
 		map = new ListenerHashMap<String, Integer>();
+		map.put("VOL", 63);
 	}
 	
 	

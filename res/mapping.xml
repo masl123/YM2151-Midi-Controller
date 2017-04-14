@@ -62,7 +62,7 @@
     <map key="FL" value="64" />
     <map key="AMS" value="65" />
     <map key="PMS" value="66" />
-    <map key="CON" value="67" />
+    <map key="CON" value="67" /><map key="VOL" value="7"></map>
   </Common>
   <LFO>
     <map key="LFRQ" value="68" />

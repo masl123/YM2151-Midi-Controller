@@ -21,6 +21,8 @@ package ym2151.Preferences.Swing;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.SysexMessage;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -39,6 +41,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeListener;
