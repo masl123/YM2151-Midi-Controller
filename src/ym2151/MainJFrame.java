@@ -76,7 +76,7 @@ public class MainJFrame extends JFrame {
 	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = 7566951928240167398L;
-	public static final String VERSION = "V1.0.2";
+	public static final String VERSION = "V1.0.3";
 	
 	
 	private JFileChooser chooser;
