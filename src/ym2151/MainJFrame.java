@@ -19,6 +19,7 @@
 package ym2151;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -41,6 +42,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.xml.parsers.ParserConfigurationException;
@@ -285,7 +287,18 @@ public class MainJFrame extends JFrame {
 		JMenuItem mntmAbout = new JMenuItem("About...");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(MainJFrame.this, LicenseText.LicenseText, "About...", JOptionPane.PLAIN_MESSAGE);
+				
+				
+				JScrollPane scr = new JScrollPane();
+				scr.setMaximumSize(new Dimension(500,500));
+				scr.setPreferredSize(new Dimension(500,500));
+				
+				JTextArea area = new JTextArea();
+				area.setText(LicenseText.LicenseText);
+				area.setCaretPosition(0);
+				scr.setViewportView(area);
+
+				JOptionPane.showMessageDialog(MainJFrame.this, scr, "About...", JOptionPane.PLAIN_MESSAGE);
 			}
 		});
 		

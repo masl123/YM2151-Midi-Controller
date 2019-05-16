@@ -12,3 +12,5 @@ There is a bug which prevents you from Changing the Master Tune of the Synth. <b
 </br>  - and put the jar file into /Library/Java/Extensions (or add the jar file to the Java Classpath in some other way)
 </br> this should give you a bunch of MidiDevices with the Prefix CoreMIDI4J. Use them.
 
+### Licenses
+See [LICENSE.md](LICENSE.md)
