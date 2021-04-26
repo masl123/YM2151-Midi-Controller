@@ -6,7 +6,7 @@ This is the Computer portion for the YM2151 Arduino Shield. It makes using the S
 <br> Look at [Mapping.md](Mapping.md) for the Midi CC Mapping.
 
 ### Build & Run
-The Project can be built and run in eclipse. Just follow the instructions [here](https://github.com/masl123/YM2151-Midi-Controller/wiki/Building,-Running-and-exporting-a-jar-File-with-eclipse). There you will also find instructions on how to export a runnable jar-File. This method was used to create the jar-Files for the releases.
+The Project can be built and run in eclipse. Just follow the instructions [here](https://github.com/masl123/YM2151-Midi-Controller/wiki/Building,-Running-and-Exporting-a-jar-File-using-eclipse). There you will also find instructions on how to export a runnable jar-File. This method was used to create the jar-Files for the releases.
 
 
 
